@@ -40,6 +40,8 @@ module.exports = function (config) {
 
 			segments.forEach(function(seg, index){
 				if (index === segments.length -1){
+					// Strip file extension
+					seg = seg.substr(0, seg.lastIndexOf('.')) || seg;
 					parent[seg] = path;
 				} else {
 					parent[seg] = parent[seg] || {};
